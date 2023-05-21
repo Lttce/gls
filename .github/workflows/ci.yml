@@ -16,12 +16,12 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version-file: 'go.mod'
-
-    - name: Run vet
-      run: go vet ./...
       
     - name: Set up staticcheck
       run: go install honnef.co/go/tools/cmd/staticcheck@latest
-    
+      
+    - name: Run vet
+      run: go vet ./...
+      
     - name: Run staticcheck
       run: staticcheck ./...
